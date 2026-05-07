@@ -1,6 +1,6 @@
 from pyscript import document
 
-def log(event):
+def submit_event(event):
     suj = document.getElementById("sec").value
     sj = document.getElementById("sub").value
     nae = document.getElementById("na").value
