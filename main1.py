@@ -1,5 +1,6 @@
 from pyscript import document
 
+@when("click", "#submit_btn")
 def submit_event(event):
     suj = document.getElementById("sec").value
     sj = document.getElementById("sub").value
