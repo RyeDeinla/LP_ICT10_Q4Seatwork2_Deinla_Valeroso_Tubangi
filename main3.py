@@ -1,8 +1,5 @@
-from pyscript import document, when, display
+from pyscript import document, when
 import pyscript
-import matplotlib
-matplotlib.use("module://matplotlib_pyodide.html5_canvas_backend")
-
 import matplotlib.pyplot as plt
 
 # Store data
@@ -19,7 +16,7 @@ def displaying(event):
     days.append(day)
     absences.append(absence)
 
-    # Clear old figure
+    # Clear old figures
     plt.close('all')
 
     # Create graph
@@ -32,7 +29,9 @@ def displaying(event):
     ax.set_ylabel("Number of Absences")
 
     ax.grid(True)
-    
+
+    # Clear graph container
     pyscript.write("graph", "")
 
+    # Show graph
     fig.canvas.show()
