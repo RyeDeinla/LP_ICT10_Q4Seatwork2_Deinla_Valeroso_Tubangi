@@ -1,4 +1,5 @@
 from pyscript import document, when, display
+import pyscript
 import matplotlib
 matplotlib.use("module://matplotlib_pyodide.html5_canvas_backend")
 
@@ -14,17 +15,16 @@ def displaying(event):
     day = document.getElementById("day").value
     absence = int(document.getElementById("absence").value)
 
-    # Save data
+    # Save values
     days.append(day)
     absences.append(absence)
 
-    # Clear old graph
-    plt.clf()
+    # Clear old figure
+    plt.close('all')
 
-    # Create figure
+    # Create graph
     fig, ax = plt.subplots()
 
-    # Plot data
     ax.plot(days, absences, marker="o")
 
     ax.set_title("Weekly Attendance (Absences)")
@@ -32,6 +32,7 @@ def displaying(event):
     ax.set_ylabel("Number of Absences")
 
     ax.grid(True)
+    
+    pyscript.write("graph", "")
 
-    # IMPORTANT
-    display(fig, target="graph")
+    fig.canvas.show()
