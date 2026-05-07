@@ -1,4 +1,4 @@
-from pyscript import document
+from pyscript import document, when
 
 @when("click", "#submit_btn")
 def submit_event(event):
