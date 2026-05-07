@@ -1,4 +1,4 @@
-from pyscript import document, when
+from pyscript import document, when, display
 import matplotlib
 matplotlib.use("module://matplotlib_pyodide.html5_canvas_backend")
 
