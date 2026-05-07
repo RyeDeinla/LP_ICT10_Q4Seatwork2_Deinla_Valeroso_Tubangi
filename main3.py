@@ -1,6 +1,3 @@
-import micropip
-await micropip.install(["matplotlib", "numpy"])
-
 # Suppress matplotlib logs
 import logging
 logging.getLogger('matplotlib').setLevel(logging.ERROR)
