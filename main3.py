@@ -1,5 +1,4 @@
-from pyscript import document, when
-import pyscript
+from pyscript import document, when, display
 import matplotlib.pyplot as plt
 
 # Store data
@@ -12,14 +11,11 @@ def displaying(event):
     day = document.getElementById("day").value
     absence = int(document.getElementById("absence").value)
 
-    # Save values
     days.append(day)
     absences.append(absence)
 
-    # Clear old figures
     plt.close('all')
 
-    # Create graph
     fig, ax = plt.subplots()
 
     ax.plot(days, absences, marker="o")
@@ -30,8 +26,4 @@ def displaying(event):
 
     ax.grid(True)
 
-    # Clear graph container
-    pyscript.write("graph", "")
-
-    # Show graph
-    fig.canvas.show()
+    display(fig, target="graph")
